@@ -1,0 +1,249 @@
+{% extends 'layouts/nav.html' %}
+
+
+{% block content %}
+<div class="container">
+    <form method="POST" id="formulario">
+        {% csrf_token %}
+    
+        <!-- Terminos -->
+        <div class="modal-terminos" style="margin-top: 25px;">
+            <div class="row">
+                <div class="ten columns">
+                    <p>
+                        Señor <br>
+                        Presidente de la Agremiación de Funcionarios <br>
+                        Públicos Jubilados y Activos del Sector Civil
+                    </p>
+                </div>
+                <div class="two columns" id="fecha-actual"></div>
+            </div>
+            <div class="row">
+                <div class="twelve columns">
+                    <h5><u>Presente</u></h5>
+                </div>
+            </div>
+            <div class="row">
+                <div class="twelve columns terminos">
+                    <ul>
+                        <ol>
+                            Solicito mi incorporación como Socio Activo de esa Entidad, como Jubilado o funcionario en
+                            Actividad de la Administración Pública.
+                        </ol>
+                        <ol>
+                            Me comprometo pagar puntualmente la <strong>cuota social</strong>, así como acatar las
+                            disposiciones legales, estatutarias y reglamentarias de la Agremiacón. Adjunto foto de mi Cédula
+                            de Identidad Civil.
+                        </ol>
+                        <ol>
+                            Al mismo tiempo <strong>autorizo</strong>, por este documento, el descuento de Gs.
+                            15.000.-(Guaraníes Quince mil) de mis haberes en forma mensual, la <strong>cuota social</strong>
+                            (art. 7 y 9 del estatuto social)
+                        </ol>
+                        <ol>
+                            El compromiso Financiero es una declaración jurada en mi carácter de asociado.
+                        </ol>
+                    </ul>
+                </div>
+            </div>
+    
+            <!-- Grupo: terminos y condiciones -->
+            <div class="check">
+                <input type="checkbox" id="termsAndConditions" required>
+                <div class="termsAndConditions-label-container form-label">
+                    <label for="termsAndConditions" class="termsAndConditions" >He leido y acepto los <a href="#"><u>Términos y Condiciones</u></a></label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+    
+            <!-- Grupo: nombre y apellido -->
+            <div class="six columns" id="nombre_apellido__grupo" >
+                <label for="nombre_apellido" class="formulario__label">Nombre y Apellido</label>
+                <div class="formulario__grupo-input">
+                    {{form.nombre_apellido}}
+                    <i class="fa-solid fa-circle-xmark formulario__validacion-estado"></i>
+                </div>
+                <p class="mensaje-error">* El campo nombre y apellido debe ser mayor a 4 digitos</p>
+            </div>
+    
+    
+            <!-- Grupo: fecha de nacimiento -->
+            <div class="six columns" id="fecha_nacimiento__grupo">
+                <label for="fecha_nacimiento" class="formulario__label">Fecha de nacimiento</label>
+                <div class="formulario__grupo-input">
+                    {{form.fecha_nacimiento}}
+                    <i class="fa-solid fa-circle-xmark formulario__validacion-estado"></i>
+                </div>
+                <p class="mensaje-error">* Ingrese de manera correcta los datos</p>
+            </div>
+        </div>
+    
+    
+        <div class="row">
+    
+            <!-- Grupo: lugar de nacimiento  -->
+            <div class="six columns" id="lugar_nacimiento__grupo">
+                <label for="lugar_nacimiento" class="formulario__label">Lugar de nacimiento</label>
+                <div class="formulario__grupo-input">
+                    {{form.lugar_nacimiento}}
+                    <i class="fa-solid fa-circle-xmark formulario__validacion-estado"></i>
+                </div>
+                <p class="mensaje-error">* El campo lugar de nacimiento solo puede contener letras. </p>
+            </div>
+    
+    
+            <!-- Grupo: nacionalidad -->
+            <div class="six columns">
+                <label for="nacionalidad" style="font-weight:100;" class="formulario__label">Nacionalidad</label>
+                {{form.nacionalidad}}
+            </div>
+        </div>
+        <div class="row">
+    
+            <!-- Grupo: cedulad de Identidad -->
+            <div class="six columns" id="cedula_identidad__grupo">
+                <label for="cedula_identidad" class="formulario__label">Cédula de Identidad N°</label>    
+                <div class="formulario__grupo-input">
+                    {{form.cedula_identidad}}
+                    <i class="fa-solid fa-circle-xmark formulario__validacion-estado"></i>
+                </div>
+                <p class="mensaje-error">* Ingresa el formato correcto de tu Cedula de Indentidad </p>
+            </div>
+    
+            <!--Grupo: N° de Beneficiario-->
+            <div class="six columns" id="numero_beneficiario__grupo">
+                <label for="numero_beneficiario" class="formulario__label">N° de Beneficiario</label>
+                <div class="formulario__grupo-input">
+                    {{form.numero_beneficiario}}
+                    <i class="fa-solid fa-circle-xmark formulario__validacion-estado"></i>
+                </div>
+                <p class="mensaje-error">* Ingresa solo numeros</p>
+            </div>
+        </div>
+        <div class="row">
+    
+            <!--Grupo: sexo-->
+            <div class="six columns">
+                <label for="sexo" style="font-weight:100;">Sexo</label>
+                {{form.sexo}}
+            </div>
+    
+            <!--Grupo: estado civil-->
+            <div class="six columns">
+                <label for="estado_civil" style="font-weight:100;">Estado civil</label>
+                {{form.estado_civil}}
+            </div>
+        </div>
+        <div class="row" id="conyuge__container">
+    
+            <!--Grupo: nombre y apellido del conyuge-->
+            <div class="twelve columns" id="nombre_conyuge__grupo" style="margin-top:10px;">
+                <label for="nombre_conyuge" class="formulario__label" id="conyuge-text">Nombre y Apellido del Cónyuge</label>
+                <div class="formulario__grupo-input">
+                    {{form.nombre_conyuge}}
+                    <i class="fa-solid fa-circle-xmark formulario__validacion-estado"></i>
+                </div>
+                <p class="mensaje-error">* El campo nombre y apellido debe ser mayor a 4 digitos</p>
+            </div>
+        </div>
+        <div class="row">
+    
+            <!--Grupo: direccion laboral-->
+            <div class="six columns" id="direccion_laboral__grupo">
+                <label for="direccion_laboral" class="formulario__label">Dirección Laboral</label>
+                <div class="formulario__grupo-input">
+                    {{form.direccion_laboral}}
+                    <i class="fa-solid fa-circle-xmark formulario__validacion-estado"></i>
+                </div>
+                <p class="mensaje-error">* Ingrese los datos de la direccion laboral.</p>
+            </div>
+    
+            <!--Grupo: entidad/Dependencia-->
+            <div class="six columns" id="entidad_dependencia__grupo">
+                <label for="entidad_dependencia" class="formulario__label">Entidad/Dependencia</label>
+                <div class="formulario__grupo-input">
+                    {{form.entidad_dependencia}}
+                    <i class="fa-solid fa-circle-xmark formulario__validacion-estado"></i>
+                </div>
+                <p class="mensaje-error">* Ingrese los datos de la direccion laboral.</p>
+            </div>
+        </div>
+        <div class="row">
+    
+            <!--Grupo: profesion u ocupacion-->
+            <div class="six columns" id="profesion_ocupacion__grupo">
+                <label for="profesion_ocupacion" class="formulario__label">Profesión u Ocupación</label>
+                <div class="formulario__grupo-input">
+                    {{form.profesion_ocupacion}}
+                    <i class="fa-solid fa-circle-xmark formulario__validacion-estado"></i>
+                </div>
+                <p class="mensaje-error">* Ingrese los datos de la profesión u ocupación.</p>
+            </div>
+    
+            <!--Grupo: especialidad-->
+            <div class="six columns" id="especialidad__grupo">
+                <label for="especialidad" class="formulario__label">Especialidad</label>
+                <div class="formulario__grupo-input">
+                    {{form.especialidad}}
+                    <i class="fa-solid fa-circle-xmark formulario__validacion-estado"></i>
+                </div>
+                <p class="mensaje-error">* Ingrese su especialidad.</p>
+            </div>
+        </div>
+        <div class="row">
+    
+            <!-- Grupo: disposición legal de jubilación: Decreto N° -->
+            <div class="six columns" id="disposicion_legal_jubilacion__grupo">
+                <label for="disposicion_legal_jubilacion" class="formulario__label">Disposición legal de jubilación: Decreto N°</label>
+                <div class="formulario__grupo-input">
+                    {{form.disposicion_legal_jubilacion}}
+                    <i class="fa-solid fa-circle-xmark formulario__validacion-estado"></i>
+                </div>
+                <p class="mensaje-error">* Ingrese su especialidad.</p>
+            </div>
+    
+            <!--Grupo: resolucion-->
+            <div class="six columns" id="resolucion_numero__grupo">
+                <label for="resolucion_numero" class="formulario__label">Resolución N°</label>
+                <div class="formulario__grupo-input">
+                    {{form.resolucion_numero}}
+                    <i class="fa-solid fa-circle-xmark formulario__validacion-estado"></i>
+                </div>
+                <p class="mensaje-error">* Ingrese su especialidad.</p>
+            </div>
+        </div>
+    
+        <!--Grupo: foto de CI grupo-->
+        <div class="row" style="margin-bottom:25px ;">
+            <label>Adjuntar foto de cédula de Identidad</label>
+            <div class="row drop-zone-container">
+
+                <div class="six columns" id="imagen_cedula_frente__grupo">
+                    <div class="drop-zone">
+                        <span class="drop-zone__prompt">Foto de la cedula posterior</span>
+                        {{form.imagen_cedula_frente}}
+                    </div>
+                    <p class="mensaje-error">* El archivo debe de ser una imagen.</p>
+                </div>
+
+                <div class="six columns" id="imagen_cedula_atras__grupo">
+                    <div class="drop-zone">
+                        <span class="drop-zone__prompt">Foto de la cedula anterior</span>
+                        {{form.imagen_cedula_atras}}
+                    </div>
+                    <p class="mensaje-error">* El archivo debe de ser una imagen.</p>
+                </div>
+
+            </div>
+        </div>
+    
+        <!--Boton enviar formulario-->
+        <input type="submit" class="submit-form button-primary" value="Enviar" id="submitForm">
+        <div class="container">
+        </div>
+    
+    </form>
+</div>
+
+{% endblock %}

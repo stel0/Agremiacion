@@ -1,0 +1,174 @@
+body {
+  background-color: #ececec;
+}
+
+:root {
+  --squish-animation-time: 500ms;
+  --progress-animation-time: 500ms;
+  --circle-animation-time: 300ms;
+  --checkmark-animation-time: 300ms;
+  --hide-animation: hide 0ms calc(var(--progress-animation-time) + var(--squish-animation-time)) forwards;
+  --btn-width: 125px;
+  --btn-height: 50px;
+  --error-color: #ff0000;
+}
+
+/* navigation bar start*/
+
+.nav-container {
+  background-color: rgb(243, 242, 242);
+  padding: 10px 20px 0 20px;
+  box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+}
+
+.top-nav-responsive {
+  display: none;
+}
+
+.nav-title {
+  margin-bottom: 8px;
+  padding: 5px;
+}
+
+.nav-title h4 {
+  margin-bottom: 0;
+}
+
+.nav-title p {
+  margin-bottom: 0;
+}
+
+.contact {
+  padding: 15px 0px 0px 0px;
+}
+
+.contact-menu {
+  display: none;
+}
+
+.contact>a {
+  color: #000;
+  font-size: 14px;
+}
+
+.contact a i {
+  padding-right: 10px;
+}
+
+.nav-main {
+  border-top: 0.5px solid rgb(187, 187, 187);
+}
+
+.menu-btn {
+  display: none;
+}
+
+.go-back {
+  display: none;
+}
+
+.nav-main>a {
+  font-size: clamp(12px, 18px, 22px);
+  margin-left: 20px;
+}
+
+.underline-hover-effect {
+  display: inline-block;
+  padding-bottom: 0, 25rem;
+  /* define el espacio entre el texto y el subrayado */
+  margin-left: 12px;
+  position: relative;
+}
+
+.underline-hover-effect::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: #000;
+  transition: width 0.25s ease-out;
+}
+
+.underline-hover-effect:hover::before {
+  width: 100%;
+}
+
+
+
+/*----- media queris -----*/
+
+@media  (max-width:750px){
+  .top-nav{
+    display: none;
+  }
+  .top-nav-responsive{
+    display: block;
+  }
+  .nav-container{
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    width: 100%;
+  }
+  .contenedor-noticias{
+    margin-top: 170px;
+  }
+  .contact{
+    display: none;
+  }
+  .nav-main{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    left: -100%;
+    background: url(/svg/bkg\ \(2\).svg) no-repeat center center/cover;
+    width: 60%;
+    height: 100%;
+    border-top:none;
+    z-index: 1;
+    transition:.2s ease-in-out;
+  }
+  .show{
+    left: 0;
+  }
+  .nav-main > a{
+    width: fit-content;
+    font-weight: 500;
+    font-size: 18px;
+    margin: 10px 10px 0 20px;
+  }
+  .nav-main > .contact-menu{
+    display: block;
+    position: absolute;
+    bottom: 20px;
+    margin-left: 20px;
+  }
+  .contact-menu a{
+    font-size: 10px;
+    color: #fff;
+  }
+  .contact-menu a i{
+    padding-right: 5px;
+  }
+  .menu-btn{
+    display: flex;
+    width: fit-content;
+    cursor: pointer;
+    font-size: 28px;
+    margin: 0 0 10px 90%;
+  }
+  .go-back{
+    display: block;
+    position: absolute;
+    font-size: 25px;
+    right:20px;
+    cursor: pointer;
+    animation:irAtras 3s infinite ease-in-out alternate;
+  }
+  .slideshow-container{
+    margin-top: 20px;
+  }
+}

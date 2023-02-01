@@ -1,0 +1,157 @@
+{% extends 'layouts/nav.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<!--Noticias inicio-->
+
+<div class="container contenedor-noticias">
+
+    <!--Slider noticias inicio-->
+
+    <div class="row  slideshow-container ">
+      <div class="twelve columns">
+        <div class="row">
+          <div class="twelve columns">
+            <h4 style="border-bottom:1px solid rgb(220, 220, 220) ;">Noticias relevantes</h4>
+            <div class="mySlides fade .u-max-full-width">
+              <img class="u-full-width" src="{% static 'images/Image1.jpg' %}">
+              <div class="text">Lorem, ipsum.</div>
+            </div>
+            <div class="mySlides fade .u-max-full-width">
+              <img class="u-full-width" src="{% static 'images/Image2.jpg' %}">
+              <div class="text">Lorem, ipsum dolor.</div>
+            </div>
+            <div class="mySlides fade .u-max-full-width">
+              <img class="u-full-width" src="{% static 'images/Image3.jpg' %}">
+              <div class="text">Lorem ipsum dolor sit amet.</div>
+            </div>
+            <a class="prev" onclick="plusSlides(-1)"><i class="fa-solid fa-angle-left"></i></a>
+            <a class="next" onclick="plusSlides(1)"><i class="fa-solid fa-angle-right"></i></a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="twelve columns">
+            <div style="text-align:center">
+              <span class="dot" onclick="currentSlide(1)"></span>
+              <span class="dot" onclick="currentSlide(2)"></span>
+              <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Slider noticias fin-->
+
+    <!--Ultimas noticias inicio-->
+
+    <div class="row">
+      <div class="twelve columns lastnews-container">
+        <div class="row news-title-container">
+          <div class="twelve columns news-title">
+            <h4>Ultimas noticias</h4>
+          </div>
+        </div>
+        <section>
+          <div class="row">
+            <div class="twelve columns card">
+              <div class="card-img">
+                <img class='u-max-full-width' src="{% static 'images/showcase1.jpg' %}">
+              </div>
+              <div class="card-text">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, veniam in reprehenderit nemo perspiciatis necessitatibus blanditiis corporis ratione, quisquam odit minima optio error, numquam esse ipsa excepturi deserunt est ad!</p>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="six columns card">
+              <div class="card-img">
+                <img class="u-max-full-width" src="{% static 'images/showcase2.jpg' %}" alt="">
+              </div>
+              <div class="card-text">
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim deleniti aliquid dolor id soluta, impedit officia incidunt eum repudiandae labore?</p>
+              </div>
+            </div>
+            <div class="six columns card">
+              <div class="card-img">
+                <img class="u-max-full-width" src="{% static 'images/showcase3.jpg' %}" alt="">
+              </div>
+              <div class="card-text">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates, repellat.</p>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="six columns card">
+              <div class="card-img">
+                <img src="{% static 'images/showcase4.jpg' %}" alt="" class="u-max-full-width">
+              </div>
+              <div class="card-text">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus tempora earum placeat.</p>
+              </div>
+            </div>
+            <div class="six columns card">
+              <div class="card-img">
+                <img src="{% static 'images/showcase5.jpg' %}" alt="" class="u-max-full-width">
+              </div>
+              <div class="card-text">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat suscipit officia beatae quod doloribus, vero tempora! Odio, molestiae eligendi. Error.</p>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="twelve columns card" >
+              <div class="card-img">
+                <img src="{% static 'images/showcase6.jpg' %}" alt="" class="u-full-width"
+                style="max-height: 350px; object-fit:cover; object-position: top;">
+              </div>
+              <div class="card-text">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias quasi rerum enim. Provident, voluptatum nam. Unde aspernatur quod sequi, vitae quisquam, inventore culpa obcaecati, ullam ex nisi repellat est nostrum. </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <!--Ultimas noticias fin-->
+
+  </div>
+
+  <!--Noticias fin-->
+
+  <!--Social starts-->
+
+  <div class="container">
+    <div class="row">
+      <hr>
+      <div class="twelve columns social">
+        <a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwi_64Dq8Nv6AhU-pJUCHYVlCmoQjBB6BAgPEAE&url=https%3A%2F%2Fes-la.facebook.com%2Flogin%2Fdevice-based%2Fregular%2Flogin%2F&usg=AOvVaw0lJpkavDe_tmvEx5NB2NC1">
+          <i class="fab fa-facebook-f "></i>
+        </a>
+        <a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjDy53z8Nv6AhWaqJUCHeYXBoAQFnoECBgQAQ&url=https%3A%2F%2Ftwitter.com%2F%3Flang%3Des&usg=AOvVaw3YX5z3gmuFXXOazOkLuKS1">
+          <i class="fab fa-twitter "></i>
+        </a>
+        <a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjCrvH88Nv6AhUkkZUCHaIzCJgQFnoECBEQAQ&url=https%3A%2F%2Fwww.instagram.com%2F&usg=AOvVaw1cBeRoOpMhZ3-x5M1sA3Fm">
+          <i class="fab fa-instagram "></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!--Social ends-->
+
+  <!--Footer starts-->
+
+  <div class="container footer-container">
+    <div class="twelve columns footer">
+      <p>La Agremiación de Funcionarios Públicos Jubilados y Activos del Sector Civil y la Secretaria de la Función Pública, acuerdan trabajar en la formación continua de a funcionarios y futuros postulantes para ingresar al sector público.</p>
+    </div>
+  </div>
+
+  <!--Footer ends-->
+
+
+{% endblock %}

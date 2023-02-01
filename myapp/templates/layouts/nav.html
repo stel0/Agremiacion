@@ -1,0 +1,83 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Basic Page Needs –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Your page title here :)</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <!-- Mobile Specific Metas –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- FONT –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+  <!-- CSS –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="{% static 'style/skeleton.css'%}">
+  <link rel="stylesheet" href="{% static 'style/normalize.css'%}">
+  <link rel="stylesheet" href="{% static 'style/nav.css' %}">
+  <link rel="stylesheet" href="{% static 'style/form.css' %}">
+  <link rel="stylesheet" href="{% static 'style/inicio.css' %}">
+
+
+  <!-- Favicon –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="{% static 'favicon.png' %}">
+  <!-- Font Awesome –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script src="https://kit.fontawesome.com/74469b923c.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+  <div class="container nav-container borders-shadows">
+    <div class="row top-nav">
+      <div class="six columns nav-title">
+        <h4><strong>Agremiacion de funcionarios publicos</strong></h4>
+        <p>
+          <u>Jubilados y activos del sector civil</u>
+        </p>
+      </div>
+      <div class="six columns contact">
+        <a href="#"><i class="fa-solid fa-location-pin"></i>ASUNCION, PARAGUAY</a><br>
+        <a><i class="fa-solid fa-phone"></i>(021) 3388839</a><br>
+        <a href="#"><i class="fa-solid fa-envelope"></i>agremiacion_jubilados@hotmail.com</a>
+      </div>
+    </div>
+    <div class="row top-nav-responsive">
+      <div class="twelve columns nav-title">
+        <h4><strong>Agremiacion de funcionarios publicos</strong></h4>
+        <p>
+          <u>Jubilados y activos del sector civil</u>
+        </p>
+      </div>
+    </div>
+    <div class="bottom-nav">
+      <div class="menu-btn">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+      <div class="nav-main" id="nav-menu">
+        <div class="go-back">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+        <a href="{% url 'inicio' %}" class="underline-hover-effect nav__item">Inicio</a>
+        <a href="{% url 'formulario' %}" class="underline-hover-effect nav__item formulario-button">Formulario</a>
+        <a href="{% url 'estatuto' %}" class="underline-hover-effect nav__item">Estatuto</a>
+        <a href="{% url 'archivos' %}" class="underline-hover-effect nav__item">Archivos</a>
+        <div class="contact-menu">
+          <a href="#"><i class="fa-solid fa-location-pin"></i>ASUNCION, PARAGUAY</a><br>
+          <a><i class="fa-solid fa-phone"></i>(021) 3388839</a><br>
+          <a href="#"><i class="fa-solid fa-envelope"></i>agremiacion_jubilados@hotmail.com</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% block content %}
+  {% endblock %}
+
+  <script src="{% static 'js/script.js' %}"></script>
+  <script src="{% static 'js/form.js' %}"></script>
+</body>
+
+</html>
